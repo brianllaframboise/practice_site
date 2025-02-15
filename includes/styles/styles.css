@@ -1,0 +1,133 @@
+body{
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+a{color: #fff;}
+
+#wrapper{
+    position: relative;
+    max-width: 1080px;
+    margin: auto;
+}
+
+#content{
+    background-image: url(./../images/birds.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header{
+    position: relative;
+    height: 113px;
+    background-color: #000;
+    border-bottom: 2px solid #fff;
+}
+header img{
+    position: absolute;
+    left: 55px;
+    top: 17px;
+}
+header button{
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    width: 130px;
+    height: 60px;
+    margin-right: 10px;
+    text-align: center;
+}
+header #btnGrp{
+    position: absolute;
+    right: 62px;
+    top: 25px;
+}
+header button:last-child {
+    color: #fff;
+    background-color: rgb(30, 174, 57);
+}
+
+nav, footer{
+    background-color: rgb(30, 174, 57);
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 125px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+/* Base styles */
+nav {
+    display: flex;
+    width: 100%;
+}
+.nav-item {
+    flex: 1; /* Makes all items take up equal space */
+    text-align: center;
+    padding: 15px;
+    position: relative; /* Needed for ::after positioning */
+}  
+/* Add vertical white line using ::after */
+.nav-item::after {
+    content: ""; /* Required for pseudo-element */
+    position: absolute;
+    top: 10%; /* Adjusts line position */
+    bottom: 10%;
+    right: 0;
+    width: 2px;
+    background-color: white;
+}
+  
+/* Remove the line from the last item */
+.nav-item:last-child::after {
+    display: none;
+}
+  
+  /* Style links */
+.nav-item a {
+    text-decoration: none;
+    font-size: 18px;
+    display: block; /* Makes the link fill the entire div */
+    width: 100%;
+}
+  
+  /* Hover effect */
+/* .nav-item a:hover {
+    color: #f4a261;
+} */
+  
+/* Responsive: Stack divs vertically on small screens */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        border-right: none; /* No right borders */
+    }
+
+    /* Convert vertical lines to bottom lines */
+    .nav-item::after {
+        width: 100%;
+        height: 2px;
+        right: auto;
+        bottom: 0;
+        top: auto;
+    }
+
+    /* .nav-item:last-child::after {
+        display: none;
+    } */
+}  
